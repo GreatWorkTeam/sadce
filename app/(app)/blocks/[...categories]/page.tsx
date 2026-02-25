@@ -1,17 +1,9 @@
 import { getAllBlockIds } from "@/lib/blocks"
-import { registryCategories } from "@/lib/categories"
 import { BlockDisplay } from "@/components/block-display"
 import { getActiveStyle } from "@/registry/_legacy-styles"
 
 export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
-
-export async function generateStaticParams() {
-  return registryCategories.map((category) => ({
-    categories: [category.slug],
-  }))
-}
+export const dynamic = "force-dynamic"
 
 export default async function BlocksPage({
   params,

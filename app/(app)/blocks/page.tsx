@@ -4,8 +4,7 @@ import { BlockDisplay } from "@/components/block-display"
 import { getActiveStyle } from "@/registry/_legacy-styles"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-export const dynamic = "force-static"
-export const revalidate = false
+export const dynamic = "force-dynamic"
 
 const FEATURED_BLOCKS = [
   "dashboard-01",
