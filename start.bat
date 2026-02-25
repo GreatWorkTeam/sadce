@@ -17,5 +17,12 @@ echo   URL: http://localhost:4000
 echo ==========================================
 echo.
 
-call pnpm dev
+where pnpm >nul 2>nul
+if errorlevel 1 (
+  echo [ERROR] pnpm no esta disponible.
+  echo Ejecuta setup.bat primero.
+  pause
+  exit /b 1
+)
 
+call pnpm exec next dev --webpack --port 4000
