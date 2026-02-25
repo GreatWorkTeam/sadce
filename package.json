@@ -20,6 +20,9 @@
     "registry:capture": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/capture-registry.mts",
     "validate:registries": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/validate-registries.mts",
     "test:apps": "bun run ./scripts/build-test-app.mts",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare deploy",
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
@@ -60,7 +63,7 @@
     "lru-cache": "^11.2.4",
     "lucide-react": "0.474.0",
     "motion": "^12.12.1",
-    "next": "16.1.4",
+    "next": "16.1.5",
     "next-themes": "0.4.6",
     "nuqs": "^2.7.2",
     "postcss": "^8.5.1",
@@ -85,6 +88,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.8.3",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@tailwindcss/postcss": "^4",
     "@types/lodash": "^4.17.7",
