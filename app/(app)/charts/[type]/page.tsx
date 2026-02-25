@@ -11,8 +11,7 @@ import { getActiveStyle } from "@/registry/_legacy-styles"
 import { charts } from "@/app/(app)/charts/charts"
 
 export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
+export const dynamic = "force-dynamic"
 
 interface ChartPageProps {
   params: Promise<{
@@ -30,12 +29,6 @@ const chartTypes = [
   "tooltip",
 ] as const
 type ChartType = (typeof chartTypes)[number]
-
-export async function generateStaticParams() {
-  return chartTypes.map((type) => ({
-    type,
-  }))
-}
 
 export default async function ChartPage({ params }: ChartPageProps) {
   const { type } = await params
